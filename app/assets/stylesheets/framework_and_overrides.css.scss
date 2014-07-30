@@ -1,3 +1,21 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,500);
+
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
+$body-bg: #2c3e50;
+
+$navbar-default-bg: #3498db;
+$navbar-default-link-color: white;
+$navbar-default-toggle-hover-bg: white;
+$navbar-default-toggle-icon-bar-bg: #d35400;
+$navbar-default-link-hover-color: #ecf0f1;
+
+$btn-lg-color: #d35400;
+
+$jumbotron-bg: #2487CA;
+
+$font-family-sans-serif: "Raleway", Helvetica, Arial, sans-serif;
+
 // import the CSS framework
 @import "bootstrap";
 
@@ -34,7 +52,7 @@ img {
 // to make views framework-neutral
 main {
   @extend .container;
-  background-color: #eee;
+  background-color: #fff;
   padding-bottom: 80px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
@@ -78,4 +96,38 @@ section {
   @extend .btn;
   @extend .btn-primary;
   @extend .btn-xs;
+}
+
+.center {
+	text-align: center;
+}
+
+.navbar-brand {
+	font-weight: bold;
+}
+
+/* Required for jQuery Masonry */
+.box {
+    margin: 25px;
+    padding: 15px;
+    font-size: 14px;
+    line-height: 1.5em;
+    float: left;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #444;
+    width: 321px;
+}
+
+.box img {
+    diplay: block;
+    width: 100%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.description {
+    margin: 10px 0 5px;
 }
