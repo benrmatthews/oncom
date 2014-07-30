@@ -1,5 +1,7 @@
 namespace :csvimport do
 
+  # To import data, run "rake csvimport:import_csv_data"
+  
   desc "Import CSV Data."
   task :import_csv_data => :environment do
 
