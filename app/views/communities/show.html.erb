@@ -21,6 +21,14 @@
 </p>
 
 <p>
+  <strong>Tags:</strong>
+  <% @community.tags.any? %>
+    <% @community.tags.each do |tag| %>
+    <%= link_to tag.name, tagged_url(:tag => tag.name) %>
+  <% end %>
+</p>
+
+<p>
   <strong>Rss:</strong>
   <%= markdown @community.rss %>
 </p>

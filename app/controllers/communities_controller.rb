@@ -3,12 +3,24 @@ class CommunitiesController < ApplicationController
 
   # GET /communities
   # GET /communities.json
-  def index 
-    @communities = Community.all
+  def index
+    if params[:tag]
+      @communities = Community.tagged_with(params[:tag])
+    else
+      @communities = Community.all
+    end
   end
   
   def browse
     @communities = Community.all
+  end
+  
+  def tagged
+    if params[:tag].present? 
+      @communities = Community.tagged_with(params[:tag])
+    else 
+      @communities = Community.communityall
+    end  
   end
 
   # GET /communities/1
@@ -74,6 +86,7 @@ class CommunitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def community_params
-      params.require(:community).permit(:name, :about, :category, :link, :rss)
+      params.require(:community).permit(:name, :about, :category, :link, :tag_list => [])
     end
+
 end

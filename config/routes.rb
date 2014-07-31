@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'contact' => 'pages#contact'
   get 'privacy' => 'pages#privacy'
   get 'terms' => 'pages#terms'
+  get 'tagged' => 'communities#tagged' 
 
   resources :communities
 
