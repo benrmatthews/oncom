@@ -4,8 +4,8 @@
   <td><h4>Category:</h4><%= community.category %></td>
   <td><h4>Link:</h4><%= markdown community.link %></td>
   <td>
-  <% @community.tags.any? %>
-    <% @community.tags.each do |tag| %>
+  <% community.tags.any? %>
+    <% community.tags.each do |tag| %>
     <%= link_to tag.name, tagged_url(:tag => tag.name) %>
   <% end %>
   </td>
