@@ -7,7 +7,7 @@
       <th>About</th>
       <th>Category</th>
       <th>Link</th>
-      <th>RSS</th>
+      <!-- <th>RSS</th> -->
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,14 +15,14 @@
   <tbody>
     <% @communities.each do |community| %>
       <tr>
-        <td><%= community.name %></td>
+        <td><h5><%= link_to community.name, community %></h5></td>
         <td><%= community.about %></td>
         <td><%= community.category %></td>
         <td><%= community.link %></td>
-        <td><%= community.rss %></td>
-        <td><%= link_to 'Show', community %></td>
-        <td><%= link_to 'Edit', edit_community_path(community) %></td>
-        <td><%= link_to 'Destroy', community, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!-- <td><%= community.rss %></td> -->
+        <td><%= link_to 'Show', community, class: "btn btn-primary" %></td>
+        <td><%= link_to 'Edit', edit_community_path(community), class: "btn btn-success" %></td>
+        <td><%= link_to 'Destroy', community, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %></td>
       </tr>
     <% end %>
   </tbody>
