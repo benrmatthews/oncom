@@ -3,7 +3,7 @@ class CommunitiesController < ApplicationController
 
   # GET /communities
   # GET /communities.json
-  def index
+  def index 
     @communities = Community.all
   end
   
