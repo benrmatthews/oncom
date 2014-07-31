@@ -3,12 +3,8 @@ class CommunitiesController < ApplicationController
 
   # GET /communities
   # GET /communities.json
-  def index
-    if params[:tag]
-      @communities = Community.tagged_with(params[:tag])
-    else
-      @communities = Community.all
-    end
+  def index 
+    @communities = Community.all
   end
   
   def browse
@@ -19,7 +15,7 @@ class CommunitiesController < ApplicationController
     if params[:tag].present? 
       @communities = Community.tagged_with(params[:tag])
     else 
-      @communities = Community.communityall
+      @communities = Community.all
     end  
   end
 
@@ -58,7 +54,7 @@ class CommunitiesController < ApplicationController
   # PATCH/PUT /communities/1.json
   def update
     respond_to do |format|
-      if @community.update(community_params)
+      if @community.update(params[:community].permit(:name, :about, :link, :rss, :tag_list))
         format.html { redirect_to @community, notice: 'Community was successfully updated.' }
         format.json { render :show, status: :ok, location: @community }
       else
@@ -86,7 +82,6 @@ class CommunitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def community_params
-      params.require(:community).permit(:name, :about, :category, :link, :tag_list => [])
+      params.require(:community).permit(:name, :about, :category, :link, :rss)
     end
-
 end
