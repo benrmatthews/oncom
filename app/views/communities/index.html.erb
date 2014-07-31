@@ -18,7 +18,7 @@
         <td><h5><%= link_to community.name, community %></h5></td>
         <td><%= community.about %></td>
         <td><%= community.category %></td>
-        <td><%= community.link %></td>
+        <td><%= markdown community.link %></td>
         <!-- <td><%= community.rss %></td> -->
         <td><%= link_to 'Show', community, class: "btn btn-primary" %></td>
         <td><%= link_to 'Edit', edit_community_path(community), class: "btn btn-success" %></td>

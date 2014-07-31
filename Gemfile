@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 gem 'thin'
 gem 'rails_12factor', group: :production
+gem 'redcarpet'
 
 group :development do
   gem 'better_errors'

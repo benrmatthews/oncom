@@ -7,22 +7,22 @@
 
 <p>
   <strong>About:</strong>
-  <%= @community.about %>
+  <%= markdown @community.about %>
 </p>
 
 <p>
   <strong>Category:</strong>
-  <%= @community.category %>
+  <%= markdown @community.category %>
 </p>
 
 <p>
   <strong>Link:</strong>
-  <%= @community.link %>
+  <%= markdown @community.link %>
 </p>
 
 <p>
   <strong>Rss:</strong>
-  <%= @community.rss %>
+  <%= markdown @community.rss %>
 </p>
 
 <%= link_to 'Edit', edit_community_path(@community) %> |
