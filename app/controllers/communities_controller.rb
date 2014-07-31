@@ -6,6 +6,10 @@ class CommunitiesController < ApplicationController
   def index
     @communities = Community.all
   end
+  
+  def browse
+    @communities = Community.all
+  end
 
   # GET /communities/1
   # GET /communities/1.json
