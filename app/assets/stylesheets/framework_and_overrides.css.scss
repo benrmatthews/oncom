@@ -12,8 +12,6 @@ $navbar-default-link-hover-color: #ecf0f1;
 
 $btn-lg-color: #d35400;
 
-$jumbotron-bg: #ffffff;
-
 $font-family-sans-serif: "Raleway", Helvetica, Arial, sans-serif;
 
 // import the CSS framework
@@ -130,5 +128,16 @@ section {
 
 .description {
     margin: 10px 0 5px;
+}
+
+.jumbotron {
+    margin-bottom: 0px;
+    background-image: image-url("communitiesfinder_jumbotron.jpg");
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    jumbotron-bg: #ffffff;
+    color: white;
+    text-shadow: black 0.2em 0.2em 0.2em;
 }
 
