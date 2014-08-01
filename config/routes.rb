@@ -8,8 +8,6 @@ Rails.application.routes.draw do
   get 'privacy' => 'pages#privacy'
   get 'terms' => 'pages#terms'
   
-  match 'tagged', to: 'communities#tagged', :as => 'tagged', via: 'get' 
-
   resources :communities
 
   root to: 'communities#index'

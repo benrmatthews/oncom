@@ -10,14 +10,7 @@ class CommunitiesController < ApplicationController
   def browse
     @communities = Community.all
   end
-  
-  def tagged
-    if params[:tag].present? 
-      @communities = Community.tagged_with(params[:tag])
-    else 
-      @communities = Community.all
-    end  
-  end
+ 
 
   # GET /communities/1
   # GET /communities/1.json
@@ -76,14 +69,14 @@ class CommunitiesController < ApplicationController
 
   private
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def community_params
-      params.require(:community).permit(:name, :about, :category, :link, :rss, :tag_list)
-    end
-  
     # Use callbacks to share common setup or constraints between actions.
     def set_community
       @community = Community.find(params[:id])
+    end
+  
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def community_params
+      params.require(:community).permit(:name, :about, :category, :link, :rss)
     end
   
 end

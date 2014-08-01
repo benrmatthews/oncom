@@ -19,8 +19,6 @@ gem 'therubyracer', :platform=>:ruby
 gem 'thin'
 gem 'rails_12factor', group: :production
 gem 'redcarpet'
-gem 'acts_as_taggable_on'
-gem 'protected_attributes'
 
 group :development do
   gem 'better_errors'
