@@ -27,7 +27,10 @@
 
 <p>
   <strong>Tags:</strong>
-  <%= @community.tag_list %>
+  <% @post.tags.any? %>
+    <% @post.tags.each do |tag| %>
+    <%= link_to tag.name, tagged_url(:tag => tag.name) %>
+  <% end %>
 </p>
 
 
