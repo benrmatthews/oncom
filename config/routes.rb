@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   get 'terms' => 'pages#terms'
   
   resources :communities
-
+  resources :tags
+  
   root to: 'communities#index'
   devise_for :users
   resources :users

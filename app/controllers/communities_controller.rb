@@ -5,6 +5,8 @@ class CommunitiesController < ApplicationController
   # GET /communities.json
   def index 
     @communities = Community.all
+    
+    @tags = Tag.all
   end
   
   def browse
