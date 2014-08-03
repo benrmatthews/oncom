@@ -1,11 +1,13 @@
 class CommunitiesController < ApplicationController
   before_action :set_community, only: [:show, :edit, :update, :destroy]
+  caches_page :index, :show
 
   # GET /communities
   # GET /communities.json
   def index
     if params[:search]
       @communities = Community.search(params[:search]).order("created_at DESC")
+      expires_in 5.minutes, public: true
     else
       @communities = Community.all.order('created_at DESC')
     end

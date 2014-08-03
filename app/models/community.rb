@@ -2,7 +2,7 @@ class Community < ActiveRecord::Base
   has_many :taggings
   has_many :tags, through: :taggings
   
-  belongs_to :category
+  belongs_to :category, touch: true
   
   extend FriendlyId
   friendly_id :name, use: [:slugged, :finders]
