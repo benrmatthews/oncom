@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/laserlemon/figaro.git
+  revision: 9bbc7343f3916e73c185d071608e5ef24e9638d0
+  ref: 9bbc7343f3916e73c185d071608e5ef24e9638d0
+  specs:
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -293,6 +302,7 @@ DEPENDENCIES
   devise_invitable
   factory_girl_rails
   faker
+  figaro!
   friendly_id
   guard-bundler
   guard-rails

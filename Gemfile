@@ -20,6 +20,7 @@ gem 'thin'
 gem 'rails_12factor', group: :production
 gem 'redcarpet'
 gem 'friendly_id'
+gem 'figaro', github: 'laserlemon/figaro', ref: "9bbc7343f3916e73c185d071608e5ef24e9638d0"
 
 group :development do
   gem 'better_errors'
