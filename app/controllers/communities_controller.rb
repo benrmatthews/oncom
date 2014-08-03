@@ -21,6 +21,9 @@ class CommunitiesController < ApplicationController
   # GET /communities/1.json
   def show
     @community = Community.find(params[:id])
+    if request.path != community_path(@community)
+      redirect_to @community, status: :moved_permanently
+    end
   end
 
   # GET /communities/new

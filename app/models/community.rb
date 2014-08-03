@@ -3,6 +3,9 @@ class Community < ActiveRecord::Base
   has_many :tags, through: :taggings
   
   belongs_to :category
+  
+  extend FriendlyId
+  friendly_id :name, use: [:slugged, :finders]
 
   def self.search(query)
   # where(:title, query) -> This would return an exact match of the query
