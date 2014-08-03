@@ -15,9 +15,10 @@
 <% else %>
   <li>  
     <form class="navbar-form" role="search">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search..." name="q">
-      </div>
+        <%= form_tag(communities_path, :method => "get", id: "search-form", class: "navbar-form", role: "search", size: '20') do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search..." %>
+        <!-- <%= submit_tag "Go!" %> -->
+        <% end %>
     </form>
   </li>
   <li class="divider-vertical"></li>

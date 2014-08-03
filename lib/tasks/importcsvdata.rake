@@ -14,9 +14,8 @@ namespace :csvimport do
       p = Community.create!({
           :name => row[0],
           :about => row[1],
-          :category => row[2],
-          :link => row[3],
-          :rss => row[4],
+          :link => row[2],
+          :rss => row[3],
         }
       )
 

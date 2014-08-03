@@ -3,10 +3,13 @@ class CommunitiesController < ApplicationController
 
   # GET /communities
   # GET /communities.json
-  def index 
-    @communities = Community.all
-    
-    @tags = Tag.all
+  def index
+    if params[:search]
+      @communities = Community.search(params[:search]).order("created_at DESC")
+    else
+      @communities = Community.all.order('created_at DESC')
+    end
+      @tags = Tag.all
   end
   
   def browse
