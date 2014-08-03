@@ -1,6 +1,6 @@
 class CommunitiesController < ApplicationController
   before_action :set_community, only: [:show, :edit, :update, :destroy]
-  caches_page :index, :show
+  caches_community :index, :show
 
   # GET /communities
   # GET /communities.json
