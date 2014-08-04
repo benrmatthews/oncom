@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140804194631) do
+ActiveRecord::Schema.define(version: 20140804205826) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20140804194631) do
     t.datetime "updated_at"
     t.string   "slug"
     t.integer  "category_id"
+    t.string   "category"
   end
 
   add_index "communities", ["slug"], name: "index_communities_on_slug", using: :btree
