@@ -1,6 +1,7 @@
 <div class="box">       
   <td><h2><%= link_to community.name, community.link %></h2></td>
-  <td><h4>About:</h4><%= community.about %></td><br><br>
-  <td><h4>Link:</h4><%= markdown community.link %></td><br>
+  <td><%= community.about %></td><br><br>
+  <td><%= markdown community.link %></td>
   <!-- <td><h4>Category:</h4><%= community.category %></td> -->
+  <td><%= markdown community.tags.map { |t| link_to t, tag_path(t) }.join(', ') %></td>
 </div>

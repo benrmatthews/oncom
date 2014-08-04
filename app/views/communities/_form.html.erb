@@ -18,8 +18,7 @@
       <%= collection_select(:community, :category_id, Category.all, :id, :name)%>
     </div>
     <div class="form-group">
-    <%= f.label :tag_list %><br />
-    <%= f.text_field :tag_list %>
+    <%= f.input :tag_list %>
     </div>
     <!-- <div class="form-group">
       <!-- <%= f.input :rss %>

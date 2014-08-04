@@ -26,10 +26,8 @@
 </p>
 
 <p>
-  Tags:
-  <% @community.tags.each do |tag| %>
-    <%= link_to tag.name, tag_path(tag) %>
-  <% end %>
+   <strong>Tags:</strong>
+  <%= render @community.tags %>
 </p>
 
 <%= link_to 'Edit', edit_community_path(@community) %> |

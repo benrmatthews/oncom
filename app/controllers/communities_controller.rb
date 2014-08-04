@@ -5,16 +5,15 @@ class CommunitiesController < ApplicationController
   # GET /communities.json
   def index
     if params[:search]
-      @communities = Community.search(params[:search]).order("created_at DESC")
+      @communities = Community.search(params[:search])
       expires_in 5.minutes, public: true
     else
-      @communities = Community.all.order('created_at DESC')
+      @communities = Community.all.order('name ASC')
     end
-      @tags = Tag.all
   end
   
   def browse
-    @communities = Community.all
+    @communities = Community.all.order('name ASC')
   end
  
 
@@ -85,7 +84,7 @@ class CommunitiesController < ApplicationController
   
     # Never trust parameters from the scary internet, only allow the white list through.
     def community_params
-      params.require(:community).permit(:name, :about, :category, :link, :rss)
+      params.require(:community).permit(:name, :about, :category, :link, :rss, :tag_list)
     end
   
 end
