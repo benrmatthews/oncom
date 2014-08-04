@@ -9,8 +9,9 @@
       <%= f.text_field :name, :autofocus => true, class: 'form-control' %>
     </div>
     <div class="form-group">
-      <%= f.label :category_list %>
-      <%= f.text_field :category_list, class: 'form-control' %>
+      <%= f.label "Category (choose one)" %>
+      <!-- <%= f.text_field :category_list, class: 'form-control' %> -->
+      <%= f.select :category_list, options_for_select(["Social Network", "Email Newsletter", "Twitter Hashtag", "Link Submission", "Forum", "App", "Other"]), class: 'form-control' %>
     </div>
     <div class="form-group">
       <%= f.label :about %>
@@ -21,7 +22,7 @@
       <%= f.text_field :link, class: 'form-control' %>
     </div>
     <div class="form-group">
-      <%= f.label :tag_list %>
+      <%= f.label "Tags (comma separated)" %>
       <%= f.text_field :tag_list, class: 'form-control' %>
     </div>
   </div>
