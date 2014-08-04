@@ -15,7 +15,8 @@ namespace :csvimport do
           :name => row[0],
           :about => row[1],
           :link => row[2],
-          :rss => row[3],
+          :category_list => row[3],
+          :tag_list => row[4],
         }
       )
 
