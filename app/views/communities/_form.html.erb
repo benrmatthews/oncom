@@ -16,6 +16,10 @@
       <%= f.label :link %>
       <%= f.text_field :link, class: 'form-control' %>
     </div>
+    <div class="field">
+      <%= f.label :category %><br />
+      <%= f.collection_select(:category_id, @categories, :id, :name, :include_blank => "Please select") %>
+    </div><br>
     <div class="form-group">
       <%= f.label :tag_list %>
       <%= f.text_field :tag_list, class: 'form-control' %>

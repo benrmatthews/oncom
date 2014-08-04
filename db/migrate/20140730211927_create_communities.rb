@@ -5,7 +5,6 @@ class CreateCommunities < ActiveRecord::Migration
       t.text :about
       t.string :link
       t.string :rss
-      t.integer :category_id
 
       t.timestamps
     end

@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
+  after_action :verify_authorized
+
 
   # GET /categories
   # GET /categories.json
@@ -10,6 +12,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @category = Category.find(params[:id])
   end
 
   # GET /categories/new
@@ -69,6 +72,6 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:name)
+      params.require(:category).permit(:name, :id)
     end
 end

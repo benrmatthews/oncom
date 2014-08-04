@@ -1,5 +1,6 @@
 <div class="box">       
   <td><h2><%= link_to community.name, community.link %></h2></td>
+  <td><p><%= render @categories %></p></td>
   <td><%= community.about %></td><br><br>
   <td><%= markdown community.link %></td>
   <!-- <td><h4>Category:</h4><%= community.category %></td> -->

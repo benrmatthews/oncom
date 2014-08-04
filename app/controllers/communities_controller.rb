@@ -1,6 +1,7 @@
 class CommunitiesController < ApplicationController
   before_action :set_community, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :prepare_categories
 
   # GET /communities
   # GET /communities.json
@@ -85,7 +86,11 @@ class CommunitiesController < ApplicationController
   
     # Never trust parameters from the scary internet, only allow the white list through.
     def community_params
-      params.require(:community).permit(:name, :about, :category, :link, :rss, :tag_list)
+      params.require(:community).permit(:name, :about, :link, :rss, :tag_list)
+    end
+  
+    def prepare_categories
+      @categories = Category.all
     end
   
 end
