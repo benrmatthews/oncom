@@ -20,8 +20,10 @@
         <td><%= markdown community.link %></td>
         <!-- <td><%= community.rss %></td> -->
         <td><%= link_to 'Show', community, class: "btn btn-primary" %></td>
+        <% if current_user.admin? %>
         <td><%= link_to 'Edit', edit_community_path(community), class: "btn btn-success" %></td>
         <td><%= link_to 'Destroy', community, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
