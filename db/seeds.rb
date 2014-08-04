@@ -7,3 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
+User.new({ :email => 'user@example.com', :password => 'changeme', :password_confirmation => 'changeme', :role => 'admin'}).skip_confirmation!.save
