@@ -7,9 +7,12 @@ class Community < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: [:slugged, :finders]
 
-  def self.search(query)
-  # where(:title, query) -> This would return an exact match of the query
-    where("about like ?", "%#{query}%") 
-  end
+  def self.search(search)
+    if search
+      find(:all, :communities => ['about ILIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+end
   
 end
