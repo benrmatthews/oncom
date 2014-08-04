@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 20140804205826) do
     t.datetime "updated_at"
     t.string   "slug"
     t.integer  "category_id"
-    t.string   "category"
   end
 
   add_index "communities", ["slug"], name: "index_communities_on_slug", using: :btree

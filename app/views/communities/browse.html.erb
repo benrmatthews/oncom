@@ -4,7 +4,6 @@
     <tr>
       <th>Name</th>
       <th>About</th>
-      <th>Categories</th>
       <th>Link</th>
       <!-- <th>RSS</th> -->
       <th colspan="3"></th>
@@ -16,7 +15,6 @@
       <tr>
         <td><h5><%= link_to community.name, community %></h5></td>
         <td><%= community.about %></td>
-      <th><% render @categories %></th>
         <td><%= markdown community.link %></td>
         <!-- <td><%= community.rss %></td> -->
         <td><%= link_to 'Show', community, class: "btn btn-primary" %></td>

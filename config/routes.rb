@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   
   resources :users
   resources :communities
-  resources :categories
   resources :tags, only: [:index, :show]
+  resources :categories, only: [:index, :show]
+
   
 end

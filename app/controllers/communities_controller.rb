@@ -1,7 +1,6 @@
 class CommunitiesController < ApplicationController
   before_action :set_community, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, :except => [:show, :index]
-  before_filter :prepare_categories
 
   # GET /communities
   # GET /communities.json
@@ -57,7 +56,7 @@ class CommunitiesController < ApplicationController
   # PATCH/PUT /communities/1.json
   def update
     respond_to do |format|
-      if @community.update(params[:community].permit(:name, :about, :link, :rss, :tag_list))
+      if @community.update(params[:community].permit(:name, :about, :link, :rss, :tag_list, :category_list))
         format.html { redirect_to @community, notice: 'Community was successfully updated.' }
         format.json { render :show, status: :ok, location: @community }
       else
@@ -86,11 +85,7 @@ class CommunitiesController < ApplicationController
   
     # Never trust parameters from the scary internet, only allow the white list through.
     def community_params
-      params.require(:community).permit(:name, :about, :link, :rss, :tag_list)
-    end
-  
-    def prepare_categories
-      @categories = Category.all
+      params.require(:community).permit(:name, :about, :link, :rss, :tag_list, :category_list)
     end
   
 end

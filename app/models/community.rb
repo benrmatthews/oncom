@@ -1,9 +1,7 @@
 class Community < ActiveRecord::Base
   acts_as_taggable
-  acts_as_taggable_on :tags
-  
-  belongs_to :category
-  
+  acts_as_taggable_on :tags, :categories
+    
   extend FriendlyId
   friendly_id :name, use: [:slugged, :finders]
 
