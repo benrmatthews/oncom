@@ -4,4 +4,20 @@
   <td><%= community.about %></td><br><br>
   <td><%= markdown community.link %></td>
   <td><%= markdown community.tags.map { |t| link_to t, tag_path(t) }.join(', ') %></td>
+<ul class="social-share-list list-inline">
+  <li class="twt">
+            <%= tweet_button count: 'horizontal',
+                             related: 'related_twitter_handle',
+                             text: community.name + ' ' + community.link,
+                             url: community.link,
+                             via: 'findcommunities' %>
+  </li><br>
+  <li class="gp">
+    <%= google_plus_button href: 'url', 
+                           script: true, 
+                           annotations: :bubble, 
+                           size: :medium %>
+  </li>
+</ul>
+
 </div>

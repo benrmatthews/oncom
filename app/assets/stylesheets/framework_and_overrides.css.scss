@@ -198,3 +198,11 @@ section {
   width: 321px;
   line-height: 1.6em;
 }
+
+ul.social-share-list {
+  li {
+    &.twt {margin-right: -35px;margin-bottom: -5px;}
+    &.gp {margin-right: -33px;margin-bottom: -5px;}
+    &.fb { position: absolute;}
+  }
+}
