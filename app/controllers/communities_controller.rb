@@ -1,6 +1,6 @@
 class CommunitiesController < ApplicationController
   before_action :set_community, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, :except => [:index, :browse, :new, :create]
+  before_filter :authenticate_user!, :except => [:index, :show, :browse, :new, :create]
 
   # GET /communities
   # GET /communities.json
@@ -43,7 +43,7 @@ class CommunitiesController < ApplicationController
 
     respond_to do |format|
       if @community.save
-        format.html { redirect_to @communities, notice: 'Community was successfully created.' }
+        format.html { redirect_to @community, notice: 'Community was successfully created.' }
         format.json { render :show, status: :created, location: @community }
       else
         format.html { render :new }
