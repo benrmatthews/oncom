@@ -1,6 +1,6 @@
 class CommunitiesController < ApplicationController
   before_action :set_community, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user!, :except => [:index, :browse, :new, :create]
 
   # GET /communities
   # GET /communities.json
