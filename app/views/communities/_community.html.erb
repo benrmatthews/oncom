@@ -3,21 +3,5 @@
   <td><h5><%= markdown community.categories.map { |t| link_to t, category_path(t) }.join(', ') %></h5></td>
   <td><%= community.about %></td><br><br>
   <td><%= markdown community.link %></td>
-  <td><%= markdown community.tags.map { |t| link_to t, tag_path(t) }.join(', ') %></td>
-<ul class="social-share-list list-inline">
-  <li class="twt">
-            <%= tweet_button count: 'horizontal',
-                             related: 'related_twitter_handle',
-                             text: community.name,
-                             url: community.link,
-                             via: 'findcommunities' %>
-  </li><br>
-  <li class="gp">
-    <%= google_plus_button href: 'url', 
-                           script: true, 
-                           annotations: :bubble, 
-                           size: :medium %>
-  </li>
-</ul>
-
+  <td><%= markdown community.tags.map { |t| link_to t, tag_path(t), class: "label label-primary" }.join(' ') %></td><br>
 </div>
