@@ -11,10 +11,15 @@ Rails.application.routes.draw do
   root to: 'communities#index'
   devise_for :users
   
+  resources :communities do
+    get 'page/:page', :action => :index, :on => :collection
+  end
+  
   resources :users
-  resources :communities
   resources :tags, only: [:index, :show]
   resources :categories, only: [:index, :show]
+  
+  
 
   
 end

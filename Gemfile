@@ -24,6 +24,7 @@ gem 'figaro', github: 'laserlemon/figaro', ref: "9bbc7343f3916e73c185d071608e5ef
 gem 'dalli'
 gem 'acts-as-taggable-on'
 gem 'social-buttons', git: 'git://github.com/iffyuva/social-buttons.git', branch: 'master'
+gem 'kaminari'
 
 group :development do
   gem 'better_errors'

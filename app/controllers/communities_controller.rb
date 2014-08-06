@@ -9,12 +9,12 @@ class CommunitiesController < ApplicationController
       @communities = Community.search(params[:search])
       expires_in 5.minutes, public: true
     else
-      @communities = Community.all.order('name ASC')
+      @communities = Community.all.order('name ASC').page params[:page]
     end
   end
   
   def browse
-    @communities = Community.all.order('name ASC')
+    @communities = Community.all.order('name ASC').page params[:page]
   end
  
 

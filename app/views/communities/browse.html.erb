@@ -1,4 +1,7 @@
 <% cache do %>
+  <div id="container" align="center">
+    <%= paginate @communities %>
+  </div>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -21,4 +24,7 @@
     <% end %>
   </tbody>
 </table>
+  <div id="container" align="center">
+    <%= paginate @communities %>
+  </div>
 <% end %>
