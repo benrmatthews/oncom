@@ -75,6 +75,18 @@ class CommunitiesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def upvote
+    @community = Community.find(params[:id])
+    @community.upvote_by current_user
+    redirect_to communities_path
+  end
+  
+  def downvote
+    @community = Community.find(params[:id])
+    @community.downvote_by current_user
+    redirect_to communities_path
+  end
 
   private
 

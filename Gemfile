@@ -25,6 +25,7 @@ gem 'dalli'
 gem 'acts-as-taggable-on'
 gem 'social-buttons', git: 'git://github.com/iffyuva/social-buttons.git', branch: 'master'
 gem 'kaminari'
+gem 'acts_as_votable'
 
 group :development do
   gem 'better_errors'

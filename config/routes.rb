@@ -13,13 +13,14 @@ Rails.application.routes.draw do
   
   resources :communities do
     get 'page/:page', :action => :index, :on => :collection
+    member do
+      put "like", to: "communities#upvote"
+      put "dislike", to: "communities#downvote"
+    end
   end
   
   resources :users
   resources :tags, only: [:index, :show]
   resources :categories, only: [:index, :show]
-  
-  
-
   
 end

@@ -3,7 +3,9 @@
   <td><h5><%= markdown community.categories.map { |t| link_to t, category_path(t) }.join(', ') %></h5></td>
   <td><%= community.about %></td><br><br>
   <td><%= markdown community.link %></td>
-  <td><%= markdown community.tags.map { |t| link_to t, tag_path(t), class: "label label-primary" }.join(' ') %></td><br>
+  <td><%= markdown community.tags.map { |t| link_to t, tag_path(t), class: "label label-primary" }.join(' ') %></td>
+  <td>Votes: <%= community.score %> <%= link_to "△", like_community_path(community), method: :put %><%= link_to "▽", dislike_community_path(community), method: :put %></td><br>
+
   <td><%= tweet_button(count: 'horizontal',
                              related: 'montfortio',
   text: "Take a look at" + ' ' + community.name,
