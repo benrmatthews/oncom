@@ -5,7 +5,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Votes</th>
+      <th>Loves</th>
       <th>Name</th>
       <th>About</th>
       <th>Link</th>
@@ -17,7 +17,7 @@
   <tbody>
     <% @communities.each do |community| %>
       <tr>
-        <td><%= community.score %> <%= link_to "△", like_community_path(community), method: :put %> <%= link_to "▽", dislike_community_path(community), method: :put %></td>
+        <td><%= link_to "♡", like_community_path(community), method: :put %> <%= community.score %></td>
         <td><h5><%= link_to community.name, community %></h5></td>
         <td><%= community.about %></td>
         <td><%= markdown community.link %></td>
