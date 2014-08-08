@@ -1,4 +1,5 @@
-<div class="box">       
+<div class="panel panel-default col-md-4">
+  <div class="panel-body">
   <td><h2><%= link_to community.name, community.link %></h2></td>
   <td><h5><%= markdown community.categories.map { |t| link_to t, category_path(t) }.join(', ') %></h5></td>
   <td><%= community.about %></td><br><br>
@@ -11,4 +12,5 @@
   text: "Take a look at" + ' ' + community.name,
                              url: community.link,
                              via: 'findcommunities') %></td>
+</div>
 </div>
